@@ -1,0 +1,78 @@
+/* 
+  Flex Direction: 
+  - row: main axis X axis, cross axis Y axis
+  - column: main axis Y axis, cross axis X axis
+    --> align-items will always align on the cross axis
+    --> justify-content will always align on the main axis
+*/
+
+body {
+    font-family: 'Potta One', Arial, Helvetica, sans-serif;
+    display: flex;
+    /* reset margin */
+    margin: 0;
+  }
+  
+  .main {
+    padding: 10px;
+    margin-left: 3rem;
+  }
+  
+  .navbar {
+    background-color: #23232e;
+    /* 100% of the view height */
+    height: 100vh;
+    /* rem: root element, a multiplier to your font size of your root element */
+    flex: 1 0 5rem; /* 5 * 16 --> 80 */
+  }
+  
+  svg {
+    width: 40px;
+  }
+  
+  .link-text {
+    display: none;
+  }
+  
+  .nav-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+  }
+  
+  .nav-link { 
+    margin-bottom: 3rem;
+  }
+  
+  #logout {
+    margin-top: auto;
+  }
+  
+  /* large screen */
+  @media screen and (min-width: 600px) {
+  }
+  
+  /* small screen size */
+  @media screen and (max-width: 600px) {
+    body {
+      flex-direction: column-reverse;
+    }
+    .navbar {
+      position: fixed;
+      bottom: 0;
+      width: 100vw;
+      height: 5rem;
+    }
+    .nav-container {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+    .nav-link {
+      margin-bottom: 0;
+    }
+  
+    #logout {
+      margin-top: 0;
+    }  
+  }

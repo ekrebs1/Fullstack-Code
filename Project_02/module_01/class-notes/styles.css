@@ -1,0 +1,75 @@
+/* 
+  Flex Direction: 
+  - row: main axis X axis, cross axis Y axis
+  - column: main axis Y axis, cross axis X axis
+    --> align-items will always align on the cross axis
+    --> justify-content will always align on the main axis
+*/
+
+body {
+    font-family: 'Potta One', Arial, Helvetica, sans-serif;
+    display: flex;
+    /* reset margin */
+    margin: 0;
+  }
+  
+  .main {
+    padding: 10px;
+    margin-left: 3rem;
+  }
+  
+  .navbar {
+    background-color: #23232e;
+    /* 100% of the view height */
+    height: 100vh;
+    /* rem: root element, a multiplier to your font size of your root element */
+    flex: 1 0 5rem; /* 5 * 16 --> 80 */
+    
+  }
+  
+  svg {
+    width: 40px;
+  }
+  
+  .link-text {
+    display: none;
+  }
+  
+  .nav-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    width: 5rem;
+    transition: width ease 200ms;
+
+  }
+  
+  .nav-link { 
+    margin-bottom: 3rem;
+  }
+  
+  #logout {
+    margin-top: auto;
+    /* justify-self: flex-end; */
+  }
+  
+  /* .flex {
+    display: flex;
+  }
+  .blue, .red, .green {
+    height: 50px;
+    width: 50px;
+  }
+  .blue {
+    flex: 1;
+    background-color: blue;
+  }
+  .green {
+    flex: 1;
+    background-color: green;
+  }
+  .red {
+    flex: 2;
+    background-color: red;
+  } */

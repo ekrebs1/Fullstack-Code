@@ -1,0 +1,27 @@
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+.parent {
+    width: 50%;
+    border: 2px solid blue;
+  }
+  
+  .content-box {
+    width: 400px;
+    box-sizing: content-box;
+    height: 300px;
+    border: 30px solid red;
+    padding: 30px;
+  }
+  
+  .border-box {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px;
+    height: 300px;
+    border: 30px solid green;
+  }
+  

@@ -1,0 +1,132 @@
+/* 
+  Flex Direction: 
+  - row: main axis X axis, cross axis Y axis
+  - column: main axis Y axis, cross axis X axis
+    --> align-items will always align on the cross axis
+    --> justify-content will always align on the main axis
+*/
+
+:root {
+    --hover-color: #FF5555;
+  }
+  
+  body {
+    font-family: 'Potta One', Arial, Helvetica, sans-serif;
+    display: flex;
+    /* reset margin */
+    margin: 0;
+  }
+  
+  .main {
+    padding: 10px;
+    margin-left: 3rem;
+  }
+  
+  .navbar {
+    background-color: #23232e;
+    /* 100% of the view height */
+    height: 100vh;
+    /* rem: root element, a multiplier to your font size of your root element */
+    flex: 1 0 5rem; /* 5 * 16 --> 80 */
+  }
+  
+  svg {
+    width: 40px;
+    transition: transform ease 200ms;
+  }
+  
+  .link-text {
+    display: none;
+    text-decoration: none;
+    color: white;
+    margin-left: 1rem;
+  }
+  
+  .nav-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    /* transition the width from 5rem to 16rem on hover */
+    width: 5rem;
+    transition: width ease 200ms;
+  }
+  
+  .nav-link { 
+    margin-bottom: 3rem;
+    text-decoration: none;
+  }
+  
+  /* PSUEDOSELECTORS */
+  /* :first-child, :last-child, :nth-child() */
+  .nav-container .nav-link:last-child {
+    margin-top: auto;
+  }
+  /* .nav-container .nav-link:first-child svg {
+    fill: blue;
+  } */
+  
+  /* .nav-container .nav-link:nth-child(3) svg {
+    fill: blue;
+  } */
+  
+  /* large screen */
+  @media screen and (min-width: 600px) {
+    .nav-container:hover {
+      width: 16rem;
+    }
+  
+    .nav-container:hover .link-text {
+      display: inline;
+    }
+  
+    .nav-container:hover {
+      align-items: flex-start;
+    }
+  
+    .nav-container:hover .nav-link {
+      margin-left: 1rem;
+    }
+  
+    .nav-link {
+      display: flex;
+      align-items: center;
+    }
+  
+    .nav-link:hover svg {
+      fill: var(--hover-color);
+    }
+  
+    .nav-link:hover .link-text {
+      color: var(--hover-color);
+    }
+  
+    .nav-link:hover svg {
+      transform: rotate(180deg);
+    }
+  }
+  
+  /* small screen size */
+  @media screen and (max-width: 600px) {
+    body {
+      flex-direction: column-reverse;
+    }
+    .navbar {
+      position: fixed;
+      bottom: 0;
+      width: 100vw;
+      height: 5rem;
+    }
+    .nav-container {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+    .nav-link {
+      margin-bottom: 0;
+    }
+  
+    #logout {
+      margin-top: 0;
+    }  
+  }
+  
