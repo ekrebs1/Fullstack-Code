@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+
+.message-form {
+    width: 480px;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: gray;
+    padding: 20px;
+    align-content: center;
+
+}
+
+
+
+
+
+.message-form-inputs {
+    margin: 5px auto;
+    padding: 5px;
+    
+
+    
+}
+
+.message-form-inputs > * {
+display: block;
+
+}
