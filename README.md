@@ -1,2 +1,2 @@
-# Fullstack-Code
-An example of a repository on github
+# Fullstack-Notes
+Weekly notes and modules throughout the course
